@@ -6,15 +6,15 @@
         <img src="../assets/logo.png" alt="logo" />
       </div>
       <!-- 登录表单区域 -->
-      <el-form label-width="0px" class="login-form">
+      <el-form :model="loginForm" label-width="0px" class="login-form">
         <!-- 用户名 -->
         <el-form-item>
           <!-- 17 登录用户名小图标 icon，涉及导入字体 -->
-          <el-input prefix-icon="el-icon-user"></el-input>
+          <el-input v-model="loginForm.username" prefix-icon="el-icon-user"></el-input>
         </el-form-item>
       <!-- 密码 -->
       <el-form-item>
-          <el-input prefix-icon="el-icon-lock"></el-input>
+          <el-input v-model="loginForm.password" prefix-icon="el-icon-lock" type="password"></el-input>
         </el-form-item>
       <!-- 按钮区域 -->
       <el-form-item class="btns">
@@ -26,7 +26,17 @@
   </div>
 </template>
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      // 登录表单的数据绑定对象
+      loginForm: {
+        username: '111',
+        password: '222'
+      }
+    }
+  }
+}
 </script>
 <style lang="less" scoped>
 .login-container {
