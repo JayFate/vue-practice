@@ -9,11 +9,12 @@
       <el-form label-width="0px" class="login-form">
         <!-- 用户名 -->
         <el-form-item>
-          <el-input></el-input>
+          <!-- 17 登录用户名小图标 icon，涉及导入字体 -->
+          <el-input prefix-icon="el-icon-user"></el-input>
         </el-form-item>
       <!-- 密码 -->
       <el-form-item>
-          <el-input></el-input>
+          <el-input prefix-icon="el-icon-lock"></el-input>
         </el-form-item>
       <!-- 按钮区域 -->
       <el-form-item class="btns">
