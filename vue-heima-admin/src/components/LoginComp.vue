@@ -6,8 +6,8 @@
         <img src="../assets/logo.png" alt="logo" />
       </div>
       <!-- 登录表单区域 -->
-      <el-form label-width="80px">
-        <el-form-item label="活动名称">
+      <el-form label-width="0px">
+        <el-form-item>
           <el-input></el-input>
         </el-form-item>
       </el-form>
