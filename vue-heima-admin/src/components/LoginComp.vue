@@ -6,18 +6,30 @@
         <img src="../assets/logo.png" alt="logo" />
       </div>
       <!-- 登录表单区域 -->
-      <el-form :model="loginForm" label-width="0px" class="login-form">
+      <el-form
+        :model="loginForm"
+        :rules="loginRules"
+        label-width="0px"
+        class="login-form"
+      >
         <!-- 用户名 -->
-        <el-form-item>
+        <el-form-item prop="username">
           <!-- 17 登录用户名小图标 icon，涉及导入字体 -->
-          <el-input v-model="loginForm.username" prefix-icon="el-icon-user"></el-input>
+          <el-input
+            v-model="loginForm.username"
+            prefix-icon="el-icon-user"
+          ></el-input>
         </el-form-item>
-      <!-- 密码 -->
-      <el-form-item>
-          <el-input v-model="loginForm.password" prefix-icon="el-icon-lock" type="password"></el-input>
+        <!-- 密码 -->
+        <el-form-item prop="password">
+          <el-input
+            v-model="loginForm.password"
+            prefix-icon="el-icon-lock"
+            type="password"
+          ></el-input>
         </el-form-item>
-      <!-- 按钮区域 -->
-      <el-form-item class="btns">
+        <!-- 按钮区域 -->
+        <el-form-item class="btns">
           <el-button type="primary">登录</el-button>
           <el-button type="info">重置</el-button>
         </el-form-item>
@@ -33,6 +45,17 @@ export default {
       loginForm: {
         username: '111',
         password: '222'
+      },
+      loginRules: {
+        // 验证用户名是否合法
+        username: [
+          { required: true, message: '请输入用户名', trigger: 'blur' },
+          { min: 3, max: 10, message: '长度在 3 到 10 个字符', trigger: 'blur' }
+        ],
+        // 验证密码是否合法
+        password: [
+          { required: true, message: '请输入密码', trigger: 'blur' },
+          { min: 6, max: 15, message: '长度在 6 到 15 个字符', trigger: 'blur' }]
       }
     }
   }
