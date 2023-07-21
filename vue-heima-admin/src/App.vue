@@ -1,14 +1,11 @@
 <template>
-  <div id="app">
-    App 根组件
-  </div>
+  <div id="app">App 根组件</div>
 </template>
 
 <script>
 export default {
-  name: "app",
-};
+  name: 'app'
+}
 </script>
 
-<style>
-</style>
+<style></style>
