@@ -1,4 +1,4 @@
 import Vue from 'vue'
-import { Button } from 'element-ui'
+import { Button, Form, FormItem, Input } from 'element-ui';
 
-Vue.use(Button)
+[Button, Form, FormItem, Input].forEach((comp) => Vue.use(comp))

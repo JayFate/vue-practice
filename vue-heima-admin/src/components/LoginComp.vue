@@ -1,9 +1,16 @@
 <template>
   <div class="login-container">
     <div class="login-box">
+      <!-- 头像区域 -->
       <div class="logo">
         <img src="../assets/logo.png" alt="logo" />
       </div>
+      <!-- 登录表单区域 -->
+      <el-form label-width="80px">
+        <el-form-item label="活动名称">
+          <el-input></el-input>
+        </el-form-item>
+      </el-form>
     </div>
   </div>
 </template>
