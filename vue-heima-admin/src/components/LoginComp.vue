@@ -44,8 +44,8 @@ export default {
     return {
       // 登录表单的数据绑定对象
       loginForm: {
-        username: '111',
-        password: '222'
+        username: 'admin',
+        password: '123456'
       },
       loginRules: {
         // 验证用户名是否合法
@@ -66,8 +66,11 @@ export default {
       this.$refs.loginFormRef.resetFields()
     },
     login () {
-      this.$refs.loginFormRef.validate(valid => {
-        console.log(valid)
+      this.$refs.loginFormRef.validate(async (valid) => {
+        if (!valid) return
+        const { data: res } = await this.$http.post('login', this.loginForm)
+        if (res.meta.status !== 200) return console.log('登录失败')
+        console.log('登录成功')
       })
     }
   }
