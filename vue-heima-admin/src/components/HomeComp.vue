@@ -7,7 +7,7 @@
 <script>
 export default {
   methods: {
-    logout () {
+    logout() {
       window.sessionStorage.clear()
       this.$router.push('login')
     }
@@ -15,5 +15,4 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
-</style>
+<style lang="less" scoped></style>
