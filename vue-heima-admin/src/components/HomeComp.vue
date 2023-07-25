@@ -1,6 +1,12 @@
 <template>
   <el-container class="home-container">
-    <el-header>Header <el-button type="info" @click="logout">退出登录</el-button></el-header>
+    <el-header>
+      <div>
+        <img src="../assets/heima.png" alt="" />
+        <span>电商后台管理系统</span>
+      </div>
+      <el-button type="info" @click="logout">登录</el-button></el-header
+    >
     <el-container>
       <el-aside width="200px">Aside</el-aside>
       <el-main>Main</el-main>
@@ -25,7 +31,20 @@ export default {
   width: 100%;
 }
 .el-header {
-  background-color: #373D41;
+  background-color: #373d41;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+  align-items: center;
+  color: #fff;
+  font-size: 20px;
+  > div {
+    display: flex;
+    align-items: center;
+    > span {
+      margin-left: 10px;
+    }
+  }
 }
 
 .el-aside {
@@ -33,6 +52,6 @@ export default {
 }
 
 .el-main {
-  background-color: #EAEDF1;
+  background-color: #eaedf1;
 }
 </style>
