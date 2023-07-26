@@ -19,6 +19,7 @@
           :collapse="isCollapse"
           :collapse-transition="false"
           router
+          :default-active="activePath"
         >
           <!-- 一级菜单 -->
           <el-submenu v-for="(item, index) in menuList" :index="item.id + ''" :key="item.id">
@@ -32,6 +33,7 @@
               v-for="subItem in item.children"
               :index="'/' + subItem.path"
               :key="subItem.id"
+              @click="saveNavState('/' + subItem.path)"
             >
               <template slot="title">
                 <i class="el-icon-menu"></i>
@@ -60,7 +62,8 @@ export default {
         'el-icon-s-order',
         'el-icon-s-data'
       ],
-      isCollapse: false
+      isCollapse: false,
+      activePath: window.sessionStorage.getItem('activePath')
     }
   },
   created() {
@@ -81,6 +84,11 @@ export default {
     // 点击按钮，切换菜单的折叠与展开
     toggleCollapse() {
       this.isCollapse = !this.isCollapse
+    },
+    // 保存二级菜单的激活状态
+    saveNavState(activePath) {
+      window.sessionStorage.setItem('activePath', activePath)
+      this.activePath = activePath
     }
   }
 }

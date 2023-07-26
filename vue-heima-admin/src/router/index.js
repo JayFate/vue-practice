@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import LoginComp from '../components/LoginComp.vue'
 import HomeComp from '../components/HomeComp.vue'
 import WelcomeComp from '../components/WelcomeComp.vue'
+import UserComp from '../components/user/UserComp.vue'
 
 Vue.use(VueRouter)
 
@@ -16,7 +17,10 @@ const routes = [
     component: HomeComp,
     redirect: '/welcome',
     // 子路由
-    children: [{ path: '/welcome', name: 'WelcomeComp', component: WelcomeComp }]
+    children: [
+      { path: '/welcome', name: 'WelcomeComp', component: WelcomeComp },
+      { path: '/users', name: 'UserComp', component: UserComp }
+    ]
   }
 ]
 
