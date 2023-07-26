@@ -18,6 +18,7 @@
           unique-opened
           :collapse="isCollapse"
           :collapse-transition="false"
+          router
         >
           <!-- 一级菜单 -->
           <el-submenu v-for="(item, index) in menuList" :index="item.id + ''" :key="item.id">
@@ -29,7 +30,7 @@
             <!-- 二级菜单 -->
             <el-menu-item
               v-for="subItem in item.children"
-              :index="subItem.id + ''"
+              :index="'/' + subItem.path"
               :key="subItem.id"
             >
               <template slot="title">
