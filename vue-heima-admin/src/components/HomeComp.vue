@@ -10,18 +10,18 @@
     <el-container>
       <el-aside width="200px">
         <!-- 侧边栏菜单区域 -->
-        <el-menu background-color="#333744" text-color="#fff" active-text-color="#ffd04b">
+        <el-menu background-color="#333744" text-color="#fff" active-text-color="#409EFF">
           <!-- 一级菜单 -->
-          <el-submenu v-for="item in menuList" :index="item.id + ''" :key="item.id">
+          <el-submenu v-for="(item, index) in menuList" :index="item.id + ''" :key="item.id">
             <!-- 一级菜单的模板区域 -->
             <template slot="title">
-              <i class="el-icon-location"></i>
+              <i :class="iconArr[index]"></i>
               <span>{{ item.authName }}</span>
             </template>
             <!-- 二级菜单 -->
             <el-menu-item v-for="subItem in item.children" :index="subItem.id + ''" :key="subItem.id">
               <template slot="title">
-                <i class="el-icon-location"></i>
+                <i class="el-icon-menu"></i>
                 <span>{{ subItem.authName }}</span>
               </template></el-menu-item
             >
@@ -37,7 +37,14 @@
 export default {
   data() {
     return {
-      menuList: []
+      menuList: [],
+      iconArr: [
+        'el-icon-user-solid',
+        'el-icon-s-platform',
+        'el-icon-s-goods',
+        'el-icon-s-order',
+        'el-icon-s-data'
+      ]
     }
   },
   created() {
