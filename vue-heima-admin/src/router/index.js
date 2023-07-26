@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import LoginComp from '../components/LoginComp.vue'
 import HomeComp from '../components/HomeComp.vue'
+import WelcomeComp from '../components/WelcomeComp.vue'
 
 Vue.use(VueRouter)
 
@@ -9,7 +10,14 @@ const routes = [
   // 自动跳转到 login
   { path: '/', redirect: '/login' },
   { path: '/login', name: 'LoginComp', component: LoginComp },
-  { path: '/home', name: 'HomeComp', component: HomeComp }
+  {
+    path: '/home',
+    name: 'HomeComp',
+    component: HomeComp,
+    redirect: '/welcome',
+    // 子路由
+    children: [{ path: '/welcome', name: 'WelcomeComp', component: WelcomeComp }]
+  }
 ]
 
 const router = new VueRouter({
