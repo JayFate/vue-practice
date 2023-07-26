@@ -20,7 +20,8 @@ import {
   Col,
   Table,
   TableColumn,
-  Switch
+  Switch,
+  Tooltip
 } from 'element-ui'
 ;[
   Button,
@@ -42,7 +43,8 @@ import {
   Col,
   Table,
   TableColumn,
-  Switch
+  Switch,
+  Tooltip
 ].forEach((comp) => Vue.use(comp))
 
 Vue.prototype.$message = Message
