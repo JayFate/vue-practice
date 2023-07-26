@@ -20,6 +20,15 @@
         </el-col>
       </el-row>
     </el-card>
+    <!-- 用户列表区域 -->
+    <el-table :data="userList" style="width: 100%" border stripe>
+      <el-table-column prop="username" label="姓名" width="180"> </el-table-column>
+      <el-table-column prop="email" label="邮箱" width="180"> </el-table-column>
+      <el-table-column prop="mobile" label="电话"> </el-table-column>
+      <el-table-column prop="role_name" label="角色"> </el-table-column>
+      <el-table-column prop="mg_state" label="状态"> </el-table-column>
+      <el-table-column label="操作"> </el-table-column>
+    </el-table>
   </div>
 </template>
 <script>
@@ -45,7 +54,10 @@ export default {
       if (res.meta.status !== 200) {
         return this.$message.error('获取用户列表失败!')
       }
-      this.userList = res.data.userList
+      res.data.users.forEach(user => {
+        user.mg_state = user.mg_state + ''
+      })
+      this.userList = res.data.users
       this.total = res.data.total
     }
   }

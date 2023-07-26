@@ -17,7 +17,9 @@ import {
   BreadcrumbItem,
   Card,
   Row,
-  Col
+  Col,
+  Table,
+  TableColumn
 } from 'element-ui'
 ;[
   Button,
@@ -36,7 +38,9 @@ import {
   BreadcrumbItem,
   Card,
   Row,
-  Col
+  Col,
+  Table,
+  TableColumn
 ].forEach((comp) => Vue.use(comp))
 
 Vue.prototype.$message = Message
