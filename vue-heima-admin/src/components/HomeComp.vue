@@ -8,9 +8,17 @@
       <el-button type="info" @click="logout">退出</el-button></el-header
     >
     <el-container>
-      <el-aside width="200px">
+      <el-aside :width="!isCollapse ? '200px' : '64px'">
+        <div @click="toggleCollapse" class="toggle-button">|||</div>
         <!-- 侧边栏菜单区域 -->
-        <el-menu background-color="#333744" text-color="#fff" active-text-color="#409EFF" unique-opened>
+        <el-menu
+          background-color="#333744"
+          text-color="#fff"
+          active-text-color="#409EFF"
+          unique-opened
+          :collapse="isCollapse"
+          :collapse-transition="false"
+        >
           <!-- 一级菜单 -->
           <el-submenu v-for="(item, index) in menuList" :index="item.id + ''" :key="item.id">
             <!-- 一级菜单的模板区域 -->
@@ -19,7 +27,11 @@
               <span>{{ item.authName }}</span>
             </template>
             <!-- 二级菜单 -->
-            <el-menu-item v-for="subItem in item.children" :index="subItem.id + ''" :key="subItem.id">
+            <el-menu-item
+              v-for="subItem in item.children"
+              :index="subItem.id + ''"
+              :key="subItem.id"
+            >
               <template slot="title">
                 <i class="el-icon-menu"></i>
                 <span>{{ subItem.authName }}</span>
@@ -44,7 +56,8 @@ export default {
         'el-icon-s-goods',
         'el-icon-s-order',
         'el-icon-s-data'
-      ]
+      ],
+      isCollapse: false
     }
   },
   created() {
@@ -61,6 +74,10 @@ export default {
       if (res.meta.status !== 200) return this.$message.error(res.meta.msg)
       this.menuList = res.data
       console.log(res)
+    },
+    // 点击按钮，切换菜单的折叠与展开
+    toggleCollapse() {
+      this.isCollapse = !this.isCollapse
     }
   }
 }
@@ -97,5 +114,15 @@ export default {
 
 .el-main {
   background-color: #eaedf1;
+}
+
+.toggle-button {
+  background-color: #4a5064;
+  text-align: center;
+  letter-spacing: 0.2em;
+  font-size: 12px;
+  line-height: 24px;
+  color: #fff;
+  cursor: pointer;
 }
 </style>
