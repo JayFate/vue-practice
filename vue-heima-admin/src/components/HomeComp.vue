@@ -10,7 +10,7 @@
     <el-container>
       <el-aside width="200px">
         <!-- 侧边栏菜单区域 -->
-        <el-menu background-color="#333744" text-color="#fff" active-text-color="#409EFF">
+        <el-menu background-color="#333744" text-color="#fff" active-text-color="#409EFF" unique-opened>
           <!-- 一级菜单 -->
           <el-submenu v-for="(item, index) in menuList" :index="item.id + ''" :key="item.id">
             <!-- 一级菜单的模板区域 -->
@@ -90,6 +90,9 @@ export default {
 
 .el-aside {
   background-color: #333744;
+  .el-menu {
+    border-right: none;
+  }
 }
 
 .el-main {
