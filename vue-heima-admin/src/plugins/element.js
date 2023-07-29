@@ -21,7 +21,8 @@ import {
   Table,
   TableColumn,
   Switch,
-  Tooltip
+  Tooltip,
+  Pagination
 } from 'element-ui'
 ;[
   Button,
@@ -44,7 +45,8 @@ import {
   Table,
   TableColumn,
   Switch,
-  Tooltip
+  Tooltip,
+  Pagination
 ].forEach((comp) => Vue.use(comp))
 
 Vue.prototype.$message = Message

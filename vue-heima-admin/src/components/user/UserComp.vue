@@ -43,6 +43,17 @@
         </template>
       </el-table-column>
     </el-table>
+    <!-- 分页区域 -->
+    <el-pagination
+      @size-change="handleSizeChange"
+      @current-change="handleCurrentChange"
+      :current-page="queryInfo.pagenum"
+      :page-sizes="[1, 2, 5, 10]"
+      :page-size="queryInfo.pagesize"
+      layout="total, sizes, prev, pager, next, jumper"
+      :total="total"
+    >
+    </el-pagination>
   </div>
 </template>
 <script>
@@ -71,8 +82,22 @@ export default {
 
       this.userList = res.data.users
       this.total = res.data.total
+    },
+    handleSizeChange(newSize) {
+      console.log('newSize', newSize)
+      this.queryInfo.pagesize = newSize
+      this.getUserList()
+    },
+    handleCurrentChange(newPage) {
+      console.log('newPage', newPage)
+      this.queryInfo.pagenum = newPage
+      this.getUserList()
     }
   }
 }
 </script>
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.el-pagination {
+  margin-top: 15px;
+}
+</style>
