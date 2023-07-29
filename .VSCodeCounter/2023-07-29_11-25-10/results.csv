@@ -1,0 +1,11 @@
+"filename", "language", "JavaScript", "Vue", "CSS", "comment", "blank", "total"
+"/Users/11104760/Documents/study/vue-practice01/vue-heima-admin/src/App.vue", "Vue", 0, 11, 0, 0, 3, 14
+"/Users/11104760/Documents/study/vue-practice01/vue-heima-admin/src/assets/css/global.css", "CSS", 0, 0, 18, 0, 3, 21
+"/Users/11104760/Documents/study/vue-practice01/vue-heima-admin/src/components/HomeComp.vue", "Vue", 0, 130, 0, 4, 6, 140
+"/Users/11104760/Documents/study/vue-practice01/vue-heima-admin/src/components/LoginComp.vue", "Vue", 0, 120, 0, 6, 5, 131
+"/Users/11104760/Documents/study/vue-practice01/vue-heima-admin/src/components/WelcomeComp.vue", "Vue", 0, 10, 0, 0, 1, 11
+"/Users/11104760/Documents/study/vue-practice01/vue-heima-admin/src/components/user/UserComp.vue", "Vue", 0, 123, 0, 8, 2, 133
+"/Users/11104760/Documents/study/vue-practice01/vue-heima-admin/src/main.js", "JavaScript", 18, 0, 0, 3, 3, 24
+"/Users/11104760/Documents/study/vue-practice01/vue-heima-admin/src/plugins/element.js", "JavaScript", 53, 0, 0, 0, 2, 55
+"/Users/11104760/Documents/study/vue-practice01/vue-heima-admin/src/router/index.js", "JavaScript", 31, 0, 0, 5, 6, 42
+"Total", "-", 102, 394, 18, 26, 31, 571

@@ -16,10 +16,7 @@
         <!-- 用户名 -->
         <el-form-item prop="username">
           <!-- 17 登录用户名小图标 icon，涉及导入字体 -->
-          <el-input
-            v-model="loginForm.username"
-            prefix-icon="el-icon-user"
-          ></el-input>
+          <el-input v-model="loginForm.username" prefix-icon="el-icon-user"></el-input>
         </el-form-item>
         <!-- 密码 -->
         <el-form-item prop="password">
@@ -40,7 +37,7 @@
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
       // 登录表单的数据绑定对象
       loginForm: {
@@ -56,16 +53,17 @@ export default {
         // 验证密码是否合法
         password: [
           { required: true, message: '请输入密码', trigger: 'blur' },
-          { min: 6, max: 15, message: '长度在 6 到 15 个字符', trigger: 'blur' }]
+          { min: 6, max: 15, message: '长度在 6 到 15 个字符', trigger: 'blur' }
+        ]
       }
     }
   },
   methods: {
     // 重置表单
-    resetLoginForm () {
+    resetLoginForm() {
       this.$refs.loginFormRef.resetFields()
     },
-    login () {
+    login() {
       this.$refs.loginFormRef.validate(async (valid) => {
         if (!valid) return
         const { data: res } = await this.$http.post('login', this.loginForm)
