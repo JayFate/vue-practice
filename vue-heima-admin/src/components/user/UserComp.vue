@@ -53,7 +53,12 @@
           >
             {{ scope.a }}</el-button
           >
-          <el-button type="danger" icon="el-icon-delete" size="mini"></el-button>
+          <el-button
+            @click="rmUserById(scope.row.id)"
+            type="danger"
+            icon="el-icon-delete"
+            size="mini"
+          ></el-button>
           <el-tooltip effect="dark" content="分配角色" placement="top">
             <el-button type="warning" icon="el-icon-setting" size="mini"></el-button>
           </el-tooltip>
@@ -274,6 +279,33 @@ export default {
         this.$message.success('修改用户成功')
         this.getUserList()
       })
+    },
+    // 根据id删除对应的用户
+    async rmUserById(id) {
+      // 先弹框询问是否删除
+      // res : confirm / cancel
+      const res = await this.$confirm('此操作将永久删除该用户, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).catch((errStr) => {
+        // 点取消进入 catch
+        return errStr
+      })
+      if (res !== 'confirm') {
+        return this.$message({
+          type: 'info',
+          message: '已取消删除'
+        })
+      }
+      this.$message({
+        type: 'success',
+        message: '删除成功!'
+      })
+      const { data: delRes } = await this.$http.delete(`users/${id}`)
+      if (delRes.meta.status !== 200) return this.$message.error('删除用户失败')
+      this.$message.success('删除用户成功')
+      this.getUserList()
     }
   }
 }

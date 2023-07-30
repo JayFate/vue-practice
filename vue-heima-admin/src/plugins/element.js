@@ -23,7 +23,8 @@ import {
   Switch,
   Tooltip,
   Pagination,
-  Dialog
+  Dialog,
+  MessageBox
 } from 'element-ui'
 ;[
   Button,
@@ -52,3 +53,4 @@ import {
 ].forEach((comp) => Vue.use(comp))
 
 Vue.prototype.$message = Message
+Vue.prototype.$confirm = MessageBox.confirm
