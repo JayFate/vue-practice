@@ -5,6 +5,7 @@ import HomeComp from '../components/HomeComp.vue'
 import WelcomeComp from '../components/WelcomeComp.vue'
 import UserComp from '../components/user/UserComp.vue'
 import RightComp from '../components/power/RightComp.vue'
+import RolesComp from '../components/power/RolesComp.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,7 @@ const routes = [
     children: [
       { path: '/welcome', name: 'WelcomeComp', component: WelcomeComp },
       { path: '/rights', name: 'RightComp', component: RightComp },
+      { path: '/roles', name: 'RolesComp', component: RolesComp },
       { path: '/users', name: 'UserComp', component: UserComp }
     ]
   }
