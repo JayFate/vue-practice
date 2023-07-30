@@ -4,6 +4,7 @@ import LoginComp from '../components/LoginComp.vue'
 import HomeComp from '../components/HomeComp.vue'
 import WelcomeComp from '../components/WelcomeComp.vue'
 import UserComp from '../components/user/UserComp.vue'
+import RightComp from '../components/power/RightComp.vue'
 
 Vue.use(VueRouter)
 
@@ -19,6 +20,7 @@ const routes = [
     // 子路由
     children: [
       { path: '/welcome', name: 'WelcomeComp', component: WelcomeComp },
+      { path: '/rights', name: 'RightComp', component: RightComp },
       { path: '/users', name: 'UserComp', component: UserComp }
     ]
   }
