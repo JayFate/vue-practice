@@ -24,7 +24,8 @@ import {
   Tooltip,
   Pagination,
   Dialog,
-  MessageBox
+  MessageBox,
+  Tag
 } from 'element-ui'
 ;[
   Button,
@@ -49,7 +50,8 @@ import {
   Switch,
   Tooltip,
   Pagination,
-  Dialog
+  Dialog,
+  Tag
 ].forEach((comp) => Vue.use(comp))
 
 Vue.prototype.$message = Message
